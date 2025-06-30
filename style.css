@@ -88,8 +88,8 @@ button:disabled { background-color: #aaa; cursor: not-allowed; transform: none; 
 .card-face, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 10px; border: 2px solid var(--gold-color); }
 .card-back { background: var(--secondary-color); background-image: radial-gradient(circle, var(--accent-color) 1px, transparent 1px); background-size: 10px 10px; }
 .card-face { background-color: var(--primary-color); transform: rotateY(180deg); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px; box-sizing: border-box; }
-.card-face img { width: 90%; border-radius: 5px; }
-.card-face h3 { margin: 10px 0 0; font-family: 'Cinzel', serif; font-size: 1em; color: var(--gold-color); }
+.card-face img { width: 100%; height: auto; border-radius: 5px; }
+.card-face h3 { margin: 10px 0 0; font-family: 'Cinzel', serif; font-size: 1em; color: var(--gold-color); text-align: center;}
 @keyframes draw-card { from { opacity: 0; transform: translateY(200px) scale(0.5); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
 /* Prediction & Summary Styling */
