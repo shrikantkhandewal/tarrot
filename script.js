@@ -1,28 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const tarotDeck = [
-        { name: "The Fool", meaning: "of beginnings, innocence, and spontaneity. A new, unexpected journey is starting." },
-        { name: "The Magician", meaning: "of manifestation, resourcefulness, and power. You have all the tools you need to succeed." },
-        { name: "The High Priestess", meaning: "of intuition, sacred knowledge, and the subconscious mind. Trust your gut feelings." },
-        { name: "The Empress", meaning: "of femininity, beauty, nature, and abundance. A time of creation and growth." },
-        { name: "The Emperor", meaning: "of authority, structure, and control. You need order to achieve your goals." },
-        { name: "The Hierophant", meaning: "of spiritual wisdom, tradition, and conformity. Follow established rules or seek guidance." },
-        { name: "The Lovers", meaning: "of love, harmony, and significant choices. A decision about a relationship or your values is near." },
-        { name: "The Chariot", meaning: "of control, willpower, and determination. Move forward with confidence." },
-        { name: "Strength", meaning: "of inner strength, courage, and compassion. You can overcome any obstacle." },
-        { name: "The Hermit", meaning: "of soul-searching, introspection, and inner guidance. It's time to reflect." },
-        { name: "Wheel of Fortune", meaning: "of good luck, karma, and life cycles. A turning point is upon you." },
-        { name: "Justice", meaning: "of fairness, truth, and cause and effect. The consequences of past actions are revealing themselves." },
-        { name: "The Hanged Man", meaning: "of pause, surrender, and new perspectives. Suspend action to gain understanding." },
-        { name: "Death", meaning: "of endings, change, and transformation. An old phase is ending, making way for something new." },
-        { name: "Temperance", meaning: "of balance, moderation, and patience. You need to find a middle ground." },
-        { name: "The Devil", meaning: "of attachment, addiction, and restriction. You are facing your inner demons." },
-        { name: "The Tower", meaning: "of sudden change, upheaval, and revelation. An unexpected, dramatic shift is occurring." },
-        { name: "The Star", meaning: "of hope, faith, and renewal. A time of peace and inspiration after turmoil." },
-        { name: "The Moon", meaning: "of illusion, fear, and the subconscious. Things are not as they seem; trust your intuition." },
-        { name: "The Sun", meaning: "of positivity, warmth, and success. A time of great joy and vitality." },
-        { name: "Judgement", meaning: "of rebirth, inner calling, and absolution. You are called to make a significant decision." },
-        { name: "The World", meaning: "of completion, integration, and accomplishment. A cycle is complete, bringing fulfillment." },
+        { name: "The Fool", meaning: "of beginnings and spontaneity.", meaning_hi: "नई शुरुआत और सहजता का।" },
+        { name: "The Magician", meaning: "of manifestation and power.", meaning_hi: "इच्छा-शक्ति और क्षमता का।" },
+        { name: "The High Priestess", meaning: "of intuition and subconscious knowledge.", meaning_hi: "अंतर्ज्ञान और अवचेतन ज्ञान का।" },
+        { name: "The Empress", meaning: "of creation, abundance, and nature.", meaning_hi: "रचना, प्रचुरता और प्रकृति का।" },
+        { name: "The Emperor", meaning: "of authority, structure, and control.", meaning_hi: "अधिकार, संरचना और नियंत्रण का।" },
+        { name: "The Hierophant", meaning: "of tradition and spiritual wisdom.", meaning_hi: "परंपरा और आध्यात्मिक ज्ञान का।" },
+        { name: "The Lovers", meaning: "of harmony, relationships, and choices.", meaning_hi: "प्रेम, सद्भाव और महत्वपूर्ण विकल्पों का।" },
+        { name: "The Chariot", meaning: "of willpower and determination.", meaning_hi: "इच्छाशक्ति और दृढ़ संकल्प का।" },
+        { name: "Strength", meaning: "of inner strength and courage.", meaning_hi: "आंतरिक शक्ति और साहस का।" },
+        { name: "The Hermit", meaning: "of introspection and inner guidance.", meaning_hi: "आत्मनिरीक्षण और आंतरिक मार्गदर्शन का।" },
+        { name: "Wheel of Fortune", meaning: "of life cycles and turning points.", meaning_hi: "भाग्य, कर्म और जीवन-चक्र का।" },
+        { name: "Justice", meaning: "of fairness, truth, and consequences.", meaning_hi: "न्याय, सत्य और कर्म-फल का।" },
+        { name: "The Hanged Man", meaning: "of surrender and new perspectives.", meaning_hi: "समर्पण और नए दृष्टिकोण का।" },
+        { name: "Death", meaning: "of endings and transformation.", meaning_hi: "अंत, परिवर्तन और रूपांतरण का।" },
+        { name: "Temperance", meaning: "of balance, patience, and moderation.", meaning_hi: "संतुलन, धैर्य और संयम का।" },
+        { name: "The Devil", meaning: "of attachment and restriction.", meaning_hi: "बंधन, व्यसन और भौतिकवाद का।" },
+        { name: "The Tower", meaning: "of sudden upheaval and revelation.", meaning_hi: "अचानक उथल-पुथल और रहस्योद्घाटन का।" },
+        { name: "The Star", meaning: "of hope, renewal, and inspiration.", meaning_hi: "आशा, विश्वास और प्रेरणा का।" },
+        { name: "The Moon", meaning: "of illusion, fear, and intuition.", meaning_hi: "भ्रम, भय और अंतर्ज्ञान का।" },
+        { name: "The Sun", meaning: "of positivity, success, and vitality.", meaning_hi: "सकारात्मकता, सफलता और जीवन शक्ति का।" },
+        { name: "Judgement", meaning: "of rebirth and inner calling.", meaning_hi: "पुनर्जन्म और आत्म-निर्णय का।" },
+        { name: "The World", meaning: "of completion and accomplishment.", meaning_hi: "पूर्णता, उपलब्धि और सफलता का।" },
     ];
 
     const askButton = document.getElementById('ask-button');
@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultView = document.getElementById('result-view');
     const selectedCardsContainer = document.getElementById('selected-cards-container');
     const predictionContainer = document.getElementById('prediction-container');
+    const hindiSummaryContainer = document.getElementById('hindi-summary-container');
     const userQuestionInput = document.getElementById('user-question');
     const questionDisplay = document.getElementById('question-display');
     const readingStatus = document.getElementById('reading-status');
@@ -40,83 +41,75 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function performReading() {
         const question = userQuestionInput.value.trim();
-        if (question === '') {
-            alert('Please enter a question to receive your reading.');
+        
+        // --- NEW VALIDATION LOGIC ---
+        if (question.length < 10) {
+            alert('Your question is too short. Please ask a clear, thoughtful question.');
+            return;
+        }
+        if (!question.endsWith('?')) {
+            alert("Please end your question with a question mark '?' to help the cards understand.");
             return;
         }
 
         askButton.disabled = true;
 
-        // 1. Fade out the initial view
         initialView.classList.add('fading-out');
         setTimeout(() => {
             initialView.classList.add('hidden');
             resultView.classList.remove('hidden');
             questionDisplay.textContent = `Your question: "${question}"`;
             drawAndFlipCards();
-        }, 500); // Match CSS transition time
+        }, 500);
     }
 
     function drawAndFlipCards() {
         const shuffledDeck = [...tarotDeck].sort(() => 0.5 - Math.random());
         const selectedCards = shuffledDeck.slice(0, 4);
 
-        selectedCardsContainer.innerHTML = ''; // Clear previous cards
+        selectedCardsContainer.innerHTML = ''; 
 
-        // 2. Create and animate the cards drawing
         selectedCards.forEach((card, index) => {
             const cardEl = createCardElement(card);
             selectedCardsContainer.appendChild(cardEl);
-            
-            // Stagger the drawing animation
-            setTimeout(() => {
-                cardEl.style.animationDelay = `${index * 0.2}s`;
-            }, 50);
+            setTimeout(() => cardEl.style.animationDelay = `${index * 0.2}s`, 50);
         });
         
-        // 3. Flip the cards sequentially after they've been drawn
         const cardElements = document.querySelectorAll('.card-container');
         let totalAnimationTime = 0;
         cardElements.forEach((cardEl, index) => {
-            const flipDelay = 1000 + index * 600; // Start flipping after 1s, with 0.6s between flips
-            setTimeout(() => {
-                cardEl.classList.add('is-flipped');
-            }, flipDelay);
-            totalAnimationTime = flipDelay + 800; // 800ms is flip animation duration
+            const flipDelay = 1000 + index * 600;
+            setTimeout(() => cardEl.classList.add('is-flipped'), flipDelay);
+            totalAnimationTime = flipDelay + 800;
         });
 
-        // 4. Generate and show the prediction after the last card has flipped
         setTimeout(() => {
             readingStatus.textContent = "Your Interpretation";
             generatePrediction(selectedCards);
+            generateHindiSummary(selectedCards); // Call the new function
+            
+            // Show all result containers
             predictionContainer.classList.remove('hidden');
             predictionContainer.classList.add('visible');
+            hindiSummaryContainer.classList.remove('hidden');
+            hindiSummaryContainer.classList.add('visible');
             resetButton.classList.remove('hidden');
             resetButton.classList.add('visible');
+
         }, totalAnimationTime);
     }
     
     function createCardElement(card) {
         const cardContainer = document.createElement('div');
         cardContainer.className = 'card-container';
-
-        const cardInner = document.createElement('div');
-        cardInner.className = 'card-inner';
-
-        const cardBack = document.createElement('div');
-        cardBack.className = 'card-back';
-        
-        const cardFace = document.createElement('div');
-        cardFace.className = 'card-face';
-        cardFace.innerHTML = `
-            <img src="https://picsum.photos/seed/${card.name.replace(/\s+/g, '')}/150/250" alt="${card.name}">
-            <h3>${card.name}</h3>
-        `;
-        
-        cardInner.appendChild(cardBack);
-        cardInner.appendChild(cardFace);
-        cardContainer.appendChild(cardInner);
-        
+        cardContainer.innerHTML = `
+            <div class="card-inner">
+                <div class="card-back"></div>
+                <div class="card-face">
+                    <img src="https://picsum.photos/seed/${card.name.replace(/\s+/g, '')}/150/250" alt="${card.name}">
+                    <h3>${card.name}</h3>
+                </div>
+            </div>`;
         return cardContainer;
     }
 
@@ -129,23 +122,32 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
+    // --- NEW HINDI SUMMARY FUNCTION ---
+    function generateHindiSummary(cards) {
+        let summaryHTML = '<h3>कार्डों का सारांश (Summary of Cards)</h3>';
+        cards.forEach(card => {
+            summaryHTML += `<p><strong>${card.name}:</strong> ${card.meaning_hi}</p>`;
+        });
+        hindiSummaryContainer.innerHTML = summaryHTML;
+    }
+
     function resetApp() {
         resultView.classList.add('fading-out');
         
         setTimeout(() => {
-            // Hide result view and reset its state
             resultView.classList.add('hidden');
             resultView.classList.remove('fading-out');
             predictionContainer.classList.add('hidden');
             predictionContainer.classList.remove('visible');
+            hindiSummaryContainer.classList.add('hidden'); // Reset Hindi summary
+            hindiSummaryContainer.classList.remove('visible');
             resetButton.classList.add('hidden');
             resetButton.classList.remove('visible');
             readingStatus.textContent = "The cards are being drawn for you...";
 
-            // Show initial view and reset its state
             initialView.classList.remove('hidden', 'fading-out');
             userQuestionInput.value = '';
             askButton.disabled = false;
-        }, 500); // Match CSS transition time
+        }, 500);
     }
 });
