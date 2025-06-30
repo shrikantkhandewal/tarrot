@@ -11,40 +11,46 @@
 </head>
 <body>
 
-    <div class="app-container">
-        <header>
-            <h1>Astro Tarot Reading</h1>
-        </header>
+    <!-- Login View -->
+    <div id="login-view">
+        <div class="login-box">
+            <h1>Welcome</h1>
+            <p>Please log in to begin your session.</p>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" id="login-button">Login</button>
+                <p id="login-error" class="error-message hidden">Invalid username or password.</p>
+            </form>
+        </div>
+    </div>
 
-        <!-- Initial View -->
-        <div id="initial-view">
-            <p class="prompt-text">Focus your mind, find your center, and ask your question to the cards.</p>
-            <div class="question-form">
-                <input type="text" id="user-question" placeholder="e.g., What should I focus on this week?">
-                <button id="ask-button">Ask the Cards</button>
+    <!-- Main Application Wrapper (Initially Hidden) -->
+    <div id="app-wrapper" class="hidden">
+        <div class="app-container">
+            <header>
+                <h1>Astro Tarot Reading</h1>
+            </header>
+
+            <!-- Initial View -->
+            <div id="initial-view">
+                <p class="prompt-text">Focus your mind, find your center, and ask your question to the cards.</p>
+                <div class="question-form">
+                    <input type="text" id="user-question" placeholder="e.g., What should I focus on for my career?">
+                    <button id="ask-button">Ask the Cards</button>
+                </div>
+            </div>
+
+            <!-- Result View -->
+            <div id="result-view" class="hidden">
+                <h2 id="reading-status">The cards are being drawn for you...</h2>
+                <p id="question-display"></p>
+                <div id="selected-cards-container"></div>
+                <div id="prediction-container" class="hidden"></div>
+                <div id="hindi-summary-container" class="hidden"></div>
+                <button id="reset-button" class="hidden">Ask Another Question</button>
             </div>
         </div>
-
-        <!-- Result View: Shown after asking a question -->
-        <div id="result-view" class="hidden">
-            <h2 id="reading-status">The cards are being drawn for you...</h2>
-            <p id="question-display"></p>
-
-            <div id="selected-cards-container">
-                <!-- The 4 selected cards will be animated here -->
-            </div>
-
-            <div id="prediction-container" class="hidden">
-                <!-- The generated prediction will appear here -->
-            </div>
-            
-            <div id="hindi-summary-container" class="hidden">
-                <!-- Hindi summary will be generated here -->
-            </div>
-            
-            <button id="reset-button" class="hidden">Ask Another Question</button>
-        </div>
-
     </div>
 
     <script src="script.js"></script>
